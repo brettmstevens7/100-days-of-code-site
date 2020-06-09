@@ -7,7 +7,8 @@ import DayThumbnail from "../components/DayThumbnail";
 const useStyles = makeStyles(theme => ({
     container: {
         padding: theme.spacing(2, 0),
-        maxWidth: theme.maxWidth.lg
+        maxWidth: theme.maxWidth.lg,
+        width: "100%"
     },
     background: {
         display: "flex",
@@ -27,7 +28,7 @@ const GridLayout = ({ data, siteTitle }) => {
                 <Typography variant="h1" className={classes.typography}>
                     {siteTitle}
                 </Typography>
-                {data.length > 1 ? (
+                {data.length > 0 ? (
                     <Grid container spacing={4}>
                         {data.map((d, i) => (
                             <Grid key={i} item sm={4} xs={12}>

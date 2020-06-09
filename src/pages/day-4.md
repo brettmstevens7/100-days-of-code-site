@@ -10,4 +10,4 @@ Today, I was interested in finding my most productive songs for running by compa
 
 I learned how to use each platform's API and generated a chart comparing pace to number of plays. My most productive artist for running is Major Lazer!
 
-<a href="https://i.pinimg.com/originals/02/51/db/0251dbbdf694e152043c11c7cca63e23.jpg" target="_blank">Here it the project on GitHub!</a>.
+<a href="https://i.pinimg.com/originals/02/51/db/0251dbbdf694e152043c11c7cca63e23.jpg" target="_blank">Here it the project on GitHub</a>.

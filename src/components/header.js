@@ -22,7 +22,6 @@ const useStyles = makeStyles(theme => ({
 
 const Header = ({ avatar, siteDescription, twitterUrl }) => {
     const classes = useStyles();
-    console.log(twitterUrl);
     return (
         <header>
             <div

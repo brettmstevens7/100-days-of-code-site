@@ -1,25 +1,28 @@
 import React from "react";
-import { graphql } from "gatsby";
+import Pagination from "../components/Pagination";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import GridLayout from "../components/GridLayout";
 
-const IndexPage = ({ data }) => {
+const GridLayoutTemplate = ({ data, pageContext }) => {
     return (
         <Layout>
             <SEO title={data.site.siteMetadata.title} />
             <GridLayout data={data.allMarkdownRemark.nodes} siteTitle={data.site.siteMetadata.title} />
+            <Pagination pageContext={pageContext} />
         </Layout>
     );
 };
 
-export default IndexPage;
+export default GridLayoutTemplate;
 
 export const pageQuery = graphql`
-    query pageQuery {
+    query pageQuery($skip: Int!, $limit: Int!) {
         allMarkdownRemark(
             filter: { fileAbsolutePath: { regex: "/pages/" }, frontmatter: { draft: { ne: true } } }
             sort: { fields: [frontmatter___day], order: DESC }
+            limit: $limit
+            skip: $skip
         ) {
             nodes {
                 html
