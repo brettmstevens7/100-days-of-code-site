@@ -6,14 +6,16 @@ import DayThumbnail from "../components/DayThumbnail";
 
 const useStyles = makeStyles(theme => ({
     container: {
-        marginTop: 64,
-        padding: theme.spacing(4, 0),
+        padding: theme.spacing(2, 0),
         maxWidth: theme.maxWidth.lg
     },
     background: {
         display: "flex",
         flexDirection: "row",
         justifyContent: "center"
+    },
+    typography: {
+        paddingBottom: theme.spacing(4)
     }
 }));
 
@@ -22,7 +24,7 @@ const GridLayout = ({ data, siteTitle }) => {
     return (
         <div className={classes.background}>
             <div className={classes.container}>
-                <Typography gutterBottom variant="h1">
+                <Typography variant="h1" className={classes.typography}>
                     {siteTitle}
                 </Typography>
                 <Grid container spacing={4}>

@@ -1,6 +1,6 @@
 module.exports = {
     siteMetadata: {
-        title: `Brett's 100 Days of Code Project`,
+        title: `Brett's 100 Days of Code`,
         description: `I’m a self-taught designer and developer working toward completing the 100 Days of Code Challenge.`,
         author: `@brettmstevens7`,
         githubUrl: "www.github.com/@brettmstevens7"

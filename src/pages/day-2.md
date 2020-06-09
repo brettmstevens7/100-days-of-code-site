@@ -1,6 +1,6 @@
 ---
 title: "Building my 100 DoC site using Gatsby"
-day: "5"
+day: "2"
 publishDate: "2020-05-25"
 thumbnailImage: "../images/day-2.png"
 categories: [""]

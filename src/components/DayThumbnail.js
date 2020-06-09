@@ -5,11 +5,13 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Dialog from "@material-ui/core/Dialog";
+import Grid from "@material-ui/core/Grid";
 import MuiDialogTitle from "@material-ui/core/DialogTitle";
 import MuiDialogContent from "@material-ui/core/DialogContent";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import Typography from "@material-ui/core/Typography";
+import DayTag from "./DayTag";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -19,7 +21,7 @@ const useStyles = makeStyles(theme => ({
         height: 204
     },
     cardContent: {
-        height: 120
+        height: 140
     },
     dialog: {
         margin: 0,
@@ -30,6 +32,12 @@ const useStyles = makeStyles(theme => ({
         right: theme.spacing(1),
         top: theme.spacing(1),
         color: theme.palette.grey[500]
+    },
+    grid: {
+        height: "100%"
+    },
+    typography: {
+        paddingBottom: theme.spacing(2)
     }
 }));
 
@@ -84,9 +92,16 @@ export default function DayThumbnail({ data }) {
                         title={title}
                     />
                     <CardContent classes={{ root: classes.cardContent }}>
-                        <Typography gutterBottom variant="h5" component="h2" className={classes.title}>
-                            {title}
-                        </Typography>
+                        <Grid container direction="column" justify="space-between" className={classes.grid}>
+                            <Grid item>
+                                <Typography gutterBottom variant="h5" component="h2" className={classes.title}>
+                                    {title}
+                                </Typography>
+                            </Grid>
+                            <Grid item>
+                                <DayTag tag={`Day ${data.frontmatter.day}`} />
+                            </Grid>
+                        </Grid>
                     </CardContent>
                 </CardActionArea>
             </Card>
@@ -95,6 +110,9 @@ export default function DayThumbnail({ data }) {
                     {data.frontmatter.title}
                 </DialogTitle>
                 <DialogContent dividers>
+                    <Typography variant="subtitle2" className={classes.typography}>
+                        {data.frontmatter.publishDate}
+                    </Typography>
                     <Typography
                         variant="body2"
                         component="div"
