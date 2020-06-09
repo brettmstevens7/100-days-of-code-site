@@ -22,6 +22,7 @@ export const pageQuery = graphql`
             sort: { fields: [frontmatter___publishDate], order: DESC }
         ) {
             nodes {
+                html
                 frontmatter {
                     day
                     title

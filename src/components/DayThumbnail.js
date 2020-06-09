@@ -1,9 +1,14 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
+import Dialog from "@material-ui/core/Dialog";
+import MuiDialogTitle from "@material-ui/core/DialogTitle";
+import MuiDialogContent from "@material-ui/core/DialogContent";
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from "@material-ui/icons/Close";
 import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles(theme => ({
@@ -15,6 +20,16 @@ const useStyles = makeStyles(theme => ({
     },
     cardContent: {
         height: 120
+    },
+    dialog: {
+        margin: 0,
+        padding: theme.spacing(2)
+    },
+    closeButton: {
+        position: "absolute",
+        right: theme.spacing(1),
+        top: theme.spacing(1),
+        color: theme.palette.grey[500]
     }
 }));
 
@@ -23,23 +38,73 @@ function truncate(input, length) {
     else return input;
 }
 
+const DialogTitle = props => {
+    const classes = useStyles();
+    const { children, onClose, ...other } = props;
+    return (
+        <MuiDialogTitle disableTypography className={classes.dialog} {...other}>
+            <Typography variant="h6">{children}</Typography>
+            {onClose ? (
+                <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
+                    <CloseIcon />
+                </IconButton>
+            ) : null}
+        </MuiDialogTitle>
+    );
+};
+
+const DialogContent = withStyles(theme => {
+    return {
+        root: {
+            padding: theme.spacing(2)
+        }
+    };
+})(MuiDialogContent);
+
 export default function DayThumbnail({ data }) {
     const classes = useStyles();
+
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+    const handleClose = () => {
+        setOpen(false);
+    };
+
     const title = truncate(data.frontmatter.title, 120);
     return (
-        <Card className={classes.root} elevation={2}>
-            <CardActionArea component="div">
-                <CardMedia
-                    className={classes.media}
-                    image={data.frontmatter.thumbnailImage.childImageSharp.fluid.src}
-                    title={title}
-                />
-                <CardContent classes={{ root: classes.cardContent }}>
-                    <Typography gutterBottom variant="h5" component="h2" className={classes.title}>
-                        {title}
-                    </Typography>
-                </CardContent>
-            </CardActionArea>
-        </Card>
+        <>
+            <Card className={classes.root} elevation={2}>
+                <CardActionArea component="button" onClick={handleClickOpen}>
+                    <CardMedia
+                        className={classes.media}
+                        image={data.frontmatter.thumbnailImage.childImageSharp.fluid.src}
+                        title={title}
+                    />
+                    <CardContent classes={{ root: classes.cardContent }}>
+                        <Typography gutterBottom variant="h5" component="h2" className={classes.title}>
+                            {title}
+                        </Typography>
+                    </CardContent>
+                </CardActionArea>
+            </Card>
+            <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
+                <DialogTitle id="customized-dialog-title" onClose={handleClose}>
+                    {data.frontmatter.title}
+                </DialogTitle>
+                <DialogContent dividers>
+                    <Typography
+                        variant="body2"
+                        component="div"
+                        gutterBottom
+                        dangerouslySetInnerHTML={{
+                            __html: data.html
+                        }}
+                    />
+                </DialogContent>
+            </Dialog>
+        </>
     );
 }
