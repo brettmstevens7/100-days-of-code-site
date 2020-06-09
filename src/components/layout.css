@@ -41,7 +41,11 @@ template {
 }
 a {
     background-color: transparent;
+    color: #fff;
     -webkit-text-decoration-skip: objects;
+}
+a:visited {
+    color: #fff;
 }
 a:active,
 a:hover {
@@ -592,13 +596,16 @@ td:last-child {
 }
 tt,
 code {
-    background-color: hsla(0, 0%, 0%, 0.04);
+    background-color: hsla(0, 0%, 78.4%, 0.18);
     border-radius: 3px;
     font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono", "Liberation Mono", Menlo, Courier,
         monospace;
     padding: 0;
     padding-top: 0.2em;
     padding-bottom: 0.2em;
+    padding-left: 0.4em;
+    margin-left: 0.1em;
+    margin-right: 0.4em;
 }
 pre code {
     background: none;

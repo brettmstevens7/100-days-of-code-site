@@ -27,13 +27,17 @@ const GridLayout = ({ data, siteTitle }) => {
                 <Typography variant="h1" className={classes.typography}>
                     {siteTitle}
                 </Typography>
-                <Grid container spacing={4}>
-                    {data.map((d, i) => (
-                        <Grid key={i} item sm={4} xs={12}>
-                            <DayThumbnail data={d} />
-                        </Grid>
-                    ))}
-                </Grid>
+                {data.length > 1 ? (
+                    <Grid container spacing={4}>
+                        {data.map((d, i) => (
+                            <Grid key={i} item sm={4} xs={12}>
+                                <DayThumbnail data={d} />
+                            </Grid>
+                        ))}
+                    </Grid>
+                ) : (
+                    <Typography variant="">No projects logged yet. Check back later.</Typography>
+                )}
             </div>
         </div>
     );

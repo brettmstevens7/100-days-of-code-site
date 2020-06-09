@@ -1,13 +1,13 @@
 ---
-title: "Building my 100 DoC site using Gatsby"
+title: "Building my 100 Days of Code site using Gatsby"
 day: "2"
 publishDate: "2020-05-25"
 thumbnailImage: "../images/day-2.png"
-categories: [""]
 draft: false
 ---
-Today I used Notion’s unofficial Python API to create a CMS for my Gatsby blog site.
 
-I used a Python script to loop through all of my pages in Notion and extract them into markdown files. The pages are then loaded into my Gatsby site during the build process.
+I built a 100 Days of Code site using Gatsby!
 
-[Here is a link to my work on GitHub](www.github.com).
+I learned how to use the Material UI design framework and implement some simple components, like a dialog, in React. I also learned more about the Moment JS time library and how to use Gatsby plugins.
+
+<a href="https://i1.wp.com/alaskadogworks.com/wp-content/uploads/2020/02/Bernese-Mountain-Dog-Temperament-long.jpg?resize=1024%2C555&ssl=1" target="_blank">Here is a link to my work on GitHub</a>.

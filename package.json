@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
-  "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "name": "100-days-of-code-site",
+  "private": false,
+  "description": "A 100 Days of Code site template to share and keep track of your work.",
+  "version": "1.0.0",
+  "author": "Brett Stevens",
   "dependencies": {
     "@material-ui/core": "^4.10.1",
     "@material-ui/icons": "^4.9.1",
@@ -19,6 +19,7 @@
     "gatsby-source-filesystem": "^2.3.8",
     "gatsby-transformer-remark": "^2.8.14",
     "gatsby-transformer-sharp": "^2.5.3",
+    "moment": "^2.26.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -42,9 +43,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/brettmstevens7/100-days-of-code-site"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/brettmstevens7/100-days-of-code-site/issues"
   }
 }

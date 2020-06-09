@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -111,7 +112,7 @@ export default function DayThumbnail({ data }) {
                 </DialogTitle>
                 <DialogContent dividers>
                     <Typography variant="subtitle2" className={classes.typography}>
-                        {data.frontmatter.publishDate}
+                        {moment(data.frontmatter.publishDate).format("MMMM Do, YYYY")}
                     </Typography>
                     <Typography
                         variant="body2"

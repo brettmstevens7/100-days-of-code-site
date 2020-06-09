@@ -26,6 +26,7 @@ const Layout = ({ children }) => {
                     description
                     author
                     githubUrl
+                    twitterUrl
                 }
             }
             avatar: file(relativePath: { eq: "me.png" }) {
@@ -40,7 +41,11 @@ const Layout = ({ children }) => {
 
     return (
         <MuiThemeProvider theme={MuiTheme}>
-            <Header siteDescription={data.site.siteMetadata.description} avatar={data.avatar} />
+            <Header
+                siteDescription={data.site.siteMetadata.description}
+                avatar={data.avatar}
+                twitterUrl={data.site.siteMetadata.twitterUrl}
+            />
             <div
                 style={{
                     margin: `0 auto`,
@@ -50,9 +55,9 @@ const Layout = ({ children }) => {
             >
                 <main>{children}</main>
                 <footer>
-                    © {new Date().getFullYear()}, Built by
+                    © {new Date().getFullYear()}. Built by
                     {` `}
-                    <a href={data.site.siteMetadata.githubUrl}>{data.site.siteMetadata.author}</a>
+                    <a href={data.site.siteMetadata.githubUrl}>{data.site.siteMetadata.author}</a>.
                 </footer>
             </div>
         </MuiThemeProvider>

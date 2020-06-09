@@ -3,11 +3,11 @@ title: "Integrating with Strava's API"
 day: "4"
 publishDate: "2020-05-27"
 thumbnailImage: "../images/day-4.png"
-categories: [""]
 draft: false
 ---
-Today I used Notion’s unofficial Python API to create a CMS for my Gatsby blog site.
 
-I used a Python script to loop through all of my pages in Notion and extract them into markdown files. The pages are then loaded into my Gatsby site during the build process.
+Today, I was interested in finding my most productive songs for running by comparing my running data (from Strava) to my listening data (from Spotify). I decided that I would use pace as a proxy for my productivity.
 
-[Here is a link to my work on GitHub](www.github.com).
+I learned how to use each platform's API and generated a chart comparing pace to number of plays. My most productive artist for running is Major Lazer!
+
+<a href="https://i.pinimg.com/originals/02/51/db/0251dbbdf694e152043c11c7cca63e23.jpg" target="_blank">Here it the project on GitHub!</a>.
