@@ -4,6 +4,8 @@
 
 A template that you can fork and make your own as part of completing the 100 Days of Code Challenge. [Here is a preview](https://bretts-100-days-of-code.netlify.app/) of what the site looks like.
 
+If you're getting started with 100 Days of Code, also be sure to check out our [100 Days of Code guide](https://www.software.com/src/essential-guide-to-the-100-days-of-code-challenge).
+
 ## 🚀 Quick start
 
 1. **Fork the site**
@@ -33,7 +35,10 @@ A template that you can fork and make your own as part of completing the 100 Day
 
 4.  **Publish to Netlify**
 
-    Create a free Netlify account and deploy your free site.
+    Create a free Netlify account and deploy your site.
+
+
+<!-- Start Gatsby starter content -->
 
 ## 🧐 What's inside?
 
@@ -91,4 +96,4 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
 
-<!-- AUTO-GENERATED-CONTENT:END -->
+<!-- End Gatsby starter content -->

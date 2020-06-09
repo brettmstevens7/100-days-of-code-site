@@ -3,7 +3,7 @@ module.exports = {
         title: `Brett's 100 Days of Code`,
         description: `Hey I'm Brett! I'm a designer and developer completing the 100 Days of Code Challenge.`,
         author: `@brettmstevens7`,
-        githubUrl: "www.github.com/@brettmstevens7",
+        githubUrl: "https://github.com/brettmstevens7",
         twitterUrl: "https://twitter.com/brettmstevens"
     },
     plugins: [
