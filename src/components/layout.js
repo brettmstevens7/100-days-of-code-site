@@ -57,7 +57,10 @@ const Layout = ({ children }) => {
                 <footer>
                     © {new Date().getFullYear()}. Built by
                     {` `}
-                    <a target="_blank" href={data.site.siteMetadata.githubUrl}>{data.site.siteMetadata.author}</a>.
+                    <a target="_blank" rel="noreferrer" href={data.site.siteMetadata.githubUrl}>
+                        {data.site.siteMetadata.author}
+                    </a>
+                    .
                 </footer>
             </div>
         </MuiThemeProvider>

@@ -7,7 +7,7 @@ import GridLayout from "../components/GridLayout";
 const GridLayoutTemplate = ({ data, pageContext }) => {
     return (
         <Layout>
-            <SEO title={data.site.siteMetadata.title} />
+            <SEO title={data.site.siteMetadata.title} description={data.site.siteMetadata.description} />
             <GridLayout data={data.allMarkdownRemark.nodes} siteTitle={data.site.siteMetadata.title} />
             <Pagination pageContext={pageContext} />
         </Layout>

@@ -50,6 +50,7 @@ const Header = ({ avatar, siteDescription, twitterUrl }) => {
                             color="default"
                             href={twitterUrl}
                             target="_blank"
+                            rel="noreferrer"
                             startIcon={<TwitterIcon />}
                         >
                             Follow me on Twitter
