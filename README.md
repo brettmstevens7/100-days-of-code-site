@@ -2,7 +2,7 @@
   100 Days of Code site template
 </h1>
 
-A template that you can fork and make your own as part of completing the 100 Days of Code Challenge. [Here is a preview](https://bretts-100-days-of-code.netlify.app/) of what the site looks like. [Here are the steps](https://bretts-100-days-of-code.netlify.app/) to add logs and deploy your site.
+A template that you can fork and make your own as part of completing the 100 Days of Code Challenge. [Here is a preview](https://bretts-100-days-of-code.netlify.app/) of what the site looks like. [Here are the steps](https://www.software.com/src/how-to-set-up-your-own-personal-website-for-100-days-of-code) to add logs and deploy your site.
 
 If you're getting started with 100 Days of Code, also be sure to check out our [100 Days of Code guide](https://www.software.com/src/essential-guide-to-the-100-days-of-code-challenge).
 
