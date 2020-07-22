@@ -47,4 +47,44 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
         });
     });
+
+    const markdownPostsResult = await graphql(
+        `
+            {
+                allMarkdownRemark(
+                    filter: { fileAbsolutePath: { regex: "/pages/" }, frontmatter: { draft: { ne: true } } }
+                ) {
+                    edges {
+                        node {
+                            frontmatter {
+                                day
+                                title
+                            }
+                        }
+                    }
+                }
+            }
+        `
+    );
+
+    // handle errors
+    if (markdownPostsResult.errors) {
+        reporter.panicOnBuild(`Error while running GraphQL query: markdown posts.`);
+        return;
+    }
+    // create day pages (e.g. /day-1, /day-2, /day-3, ...)
+    const DayTemplate = path.resolve(`./src/components/DayTemplate.js`);
+
+    const DayPages = markdownPostsResult.data.allMarkdownRemark.edges;
+
+    DayPages.forEach(page => {
+        createPage({
+            path: `day-${page.node.frontmatter.day}`,
+            component: DayTemplate,
+            context: {
+                day: page.node.frontmatter.day,
+                title: page.node.frontmatter.title
+            }
+        });
+    });
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import moment from "moment";
+import { Link } from "gatsby";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -11,6 +12,7 @@ import MuiDialogTitle from "@material-ui/core/DialogTitle";
 import MuiDialogContent from "@material-ui/core/DialogContent";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
+import OpenInNewIcon from "@material-ui/icons/OpenInNew";
 import Typography from "@material-ui/core/Typography";
 import DayTag from "./DayTag";
 
@@ -28,11 +30,13 @@ const useStyles = makeStyles(theme => ({
         margin: 0,
         padding: theme.spacing(2)
     },
-    closeButton: {
+    button: {
+        color: theme.palette.grey[500]
+    },
+    buttonCt: {
         position: "absolute",
         right: theme.spacing(1),
-        top: theme.spacing(1),
-        color: theme.palette.grey[500]
+        top: theme.spacing(1)
     },
     grid: {
         height: "100%"
@@ -49,15 +53,24 @@ function truncate(input, length) {
 
 const DialogTitle = props => {
     const classes = useStyles();
-    const { children, onClose, ...other } = props;
+    const { children, onClose, day, ...other } = props;
     return (
         <MuiDialogTitle disableTypography className={classes.dialog} {...other}>
             <Typography variant="h6">{children}</Typography>
-            {onClose ? (
-                <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
-                    <CloseIcon />
-                </IconButton>
-            ) : null}
+            <div className={classes.buttonCt}>
+                {onClose ? (
+                    <>
+                        <IconButton aria-label="close" className={classes.button} onClick={onClose}>
+                            <CloseIcon />
+                        </IconButton>
+                    </>
+                ) : null}
+                <Link to={`day-${day}`}>
+                    <IconButton aria-label="open-in-new" className={classes.button}>
+                        <OpenInNewIcon />
+                    </IconButton>
+                </Link>
+            </div>
         </MuiDialogTitle>
     );
 };
@@ -83,6 +96,7 @@ export default function DayThumbnail({ data }) {
     };
 
     const title = truncate(data.frontmatter.title, 120);
+    const day = data.frontmatter.day;
     return (
         <>
             <Card className={classes.root} elevation={2}>
@@ -100,14 +114,14 @@ export default function DayThumbnail({ data }) {
                                 </Typography>
                             </Grid>
                             <Grid item>
-                                <DayTag tag={`Day ${data.frontmatter.day}`} />
+                                <DayTag tag={`Day ${day}`} />
                             </Grid>
                         </Grid>
                     </CardContent>
                 </CardActionArea>
             </Card>
             <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
-                <DialogTitle id="customized-dialog-title" onClose={handleClose}>
+                <DialogTitle id="customized-dialog-title" onClose={handleClose} day={day}>
                     {data.frontmatter.title}
                 </DialogTitle>
                 <DialogContent dividers>

@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "gatsby";
 import { makeStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
@@ -34,11 +35,13 @@ const Header = ({ avatar, siteDescription, twitterUrl }) => {
                 <Grid container direction="row" spacing={2} justify="space-between">
                     <Grid item>
                         <div className={classes.avatarCt}>
-                            <Avatar
-                                src={avatar.childImageSharp.fixed.src}
-                                alt="A picture of me!"
-                                className={classes.avatar}
-                            />
+                            <Link to={"/"}>
+                                <Avatar
+                                    src={avatar.childImageSharp.fixed.src}
+                                    alt="A picture of me!"
+                                    className={classes.avatar}
+                                />
+                            </Link>
                             <Typography gutterBottom variant="subtitle2">
                                 {siteDescription}
                             </Typography>

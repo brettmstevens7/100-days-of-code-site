@@ -4,7 +4,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import GridLayout from "../components/GridLayout";
 
-const GridLayoutTemplate = ({ data, pageContext }) => {
+const PageTemplate = ({ data, pageContext }) => {
     return (
         <Layout>
             <SEO title={data.site.siteMetadata.title} description={data.site.siteMetadata.description} />
@@ -14,7 +14,7 @@ const GridLayoutTemplate = ({ data, pageContext }) => {
     );
 };
 
-export default GridLayoutTemplate;
+export default PageTemplate;
 
 export const pageQuery = graphql`
     query pageQuery($skip: Int!, $limit: Int!) {
