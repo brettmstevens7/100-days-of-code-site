@@ -3,6 +3,8 @@ title: "Integrating with Strava's API"
 day: "4"
 publishDate: "2020-05-27"
 thumbnailImage: "../images/day-4.png"
+shareText: "My most productive artist is Major Lazer"
+hashtags: ["100DaysOfCode", "majorlazer"]
 draft: false
 ---
 

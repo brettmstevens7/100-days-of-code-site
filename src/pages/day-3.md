@@ -3,6 +3,8 @@ title: "Experimenting with VS Code extensions"
 day: "3"
 publishDate: "2020-05-26"
 thumbnailImage: "../images/day-3.png"
+shareText: "Built my first VS Code extension... check it out"
+hashtags: ["100DaysOfCode", "VSCode"]
 draft: false
 ---
 

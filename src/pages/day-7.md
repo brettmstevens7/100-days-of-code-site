@@ -3,6 +3,8 @@ title: "Designing a personal website in Figma"
 day: "7"
 publishDate: "2020-05-30"
 thumbnailImage: "../images/day-7.png"
+shareText: "Learning to design in Figma"
+hashtags: ["100DaysOfCode", "Figma"]
 draft: false
 ---
 Today, I designed my own personal website in Figma. Tomorrow I'm going to work on building it using Gatsby.

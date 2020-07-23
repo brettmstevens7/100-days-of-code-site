@@ -3,6 +3,8 @@ title: "My first Chrome extension"
 day: "1"
 publishDate: "2020-05-24"
 thumbnailImage: "../images/day-1.png"
+shareText: "I built a Chrome extension! 😊"
+hashtags: ["100DaysOfCode", "Chrome"]
 draft: false
 ---
 

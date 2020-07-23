@@ -9,10 +9,10 @@ import Typography from "@material-ui/core/Typography";
 import Card from "@material-ui/core/Card";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import Share from "../components/share";
 
 const useStyles = makeStyles(theme => ({
     container: {
-        // padding: theme.spacing(0, 2),
         maxWidth: 700,
         position: "relative"
     },
@@ -39,6 +39,9 @@ const useStyles = makeStyles(theme => ({
     },
     typography: {
         padding: "0px 16px 16px 16px"
+    },
+    share: {
+        padding: "0px 16px 16px 16px"
     }
 }));
 
@@ -46,11 +49,15 @@ const DayTemplate = ({ data, pageContext }) => {
     const classes = useStyles();
     const theme = useTheme();
     const isTablet = useMediaQuery(theme.breakpoints.down("sm"));
+
+    const { title, publishDate, shareText, hashtags, thumbnailImage } = data.markdownRemark.frontmatter;
     return (
         <Layout>
             <SEO
-                title={`${data.site.siteMetadata.title} | ${pageContext.title}`}
+                title={`${data.site.siteMetadata.title} | ${title}`}
                 description={data.site.siteMetadata.description}
+                url={typeof window !== "undefined" ? window.location.href : ""}
+                image={thumbnailImage.childImageSharp.fluid.src}
             />
             <div className={classes.background}>
                 <div className={classes.container}>
@@ -62,13 +69,13 @@ const DayTemplate = ({ data, pageContext }) => {
                         >
                             {data.markdownRemark.frontmatter.title}
                         </Typography>
+                        <div className={classes.share}>
+                            <Share title={title} text={shareText} hashtags={hashtags} />
+                        </div>
                         <Typography variant="subtitle2" className={classes.typography}>
-                            {moment(data.markdownRemark.frontmatter.publishDate).format("MMMM Do, YYYY")}
+                            {moment(publishDate).format("MMMM Do, YYYY")}
                         </Typography>
-                        <Img
-                            fluid={data.markdownRemark.frontmatter.thumbnailImage.childImageSharp.fluid}
-                            alt={pageContext.title}
-                        />
+                        <Img fluid={thumbnailImage.childImageSharp.fluid} alt={pageContext.title} />
                         <Typography
                             variant="body1"
                             className={classes.text}
@@ -78,7 +85,7 @@ const DayTemplate = ({ data, pageContext }) => {
                             }}
                         />
                     </Card>
-                    <div style={{display: "flex", justifyContent: "center", marginBottom: 48}}>
+                    <div style={{ display: "flex", justifyContent: "center", marginBottom: 48 }}>
                         <Link to="/">
                             <Button variant="text" color="default" size="large">
                                 Back to home
@@ -100,6 +107,8 @@ export const dayQuery = graphql`
                 title
                 day
                 publishDate
+                shareText
+                hashtags
                 thumbnailImage {
                     childImageSharp {
                         fluid(maxWidth: 400, quality: 100) {

@@ -3,6 +3,8 @@ title: "Using Notion as a CMS"
 day: "5"
 publishDate: "2020-05-28"
 thumbnailImage: "../images/day-5.png"
+shareText: "Using Notion as a CMS"
+hashtags: ["100DaysOfCode", "Notion", "Python"]
 draft: false
 ---
 Today I used Notion’s unofficial Python API to create a CMS for my Gatsby blog site.

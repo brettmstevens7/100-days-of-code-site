@@ -3,6 +3,8 @@ title: "Building my 100 Days of Code site using Gatsby"
 day: "2"
 publishDate: "2020-05-25"
 thumbnailImage: "../images/day-2.png"
+shareText: "Just set up my first Gatsby site"
+hashtags: ["100DaysOfCode", "Gatsby"]
 draft: false
 ---
 

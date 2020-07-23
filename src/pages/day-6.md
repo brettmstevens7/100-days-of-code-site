@@ -3,6 +3,8 @@ title: "Creating a Nivo React chart"
 day: "6"
 publishDate: "2020-05-29"
 thumbnailImage: "../images/day-6.png"
+shareText: "Some cool React charts"
+hashtags: ["100DaysOfCode", "Nivo", "React"]
 draft: false
 ---
 I created my first React chart (a stacked bar) using the Nivo library. Nivo is a React library that allows you to quickly build all types of charts without having to get into the details of D3. 
