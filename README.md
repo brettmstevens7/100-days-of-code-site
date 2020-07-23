@@ -6,6 +6,8 @@ A template that you can fork and make your own as part of completing the 100 Day
 
 If you're getting started with 100 Days of Code, also be sure to check out our [100 Days of Code guide](https://www.software.com/src/essential-guide-to-the-100-days-of-code-challenge).
 
+<img src="https://www.datocms-assets.com/28026/1592853702-100-doc-template-compressed.gif" alt="100 Days of Code starter template">
+
 ## 🚀 Quick start
 
 1. **Fork this repo**
